@@ -1,0 +1,128 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-11-20 21:01+0100\n"
+"PO-Revision-Date: 2016-11-20 21:01+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ../../../xampp/apps/wordpress/htdocs/wp-content/themes/"
+"writerportfolio\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: content/content-menu.php:37
+msgid "about"
+msgstr "o-mnie"
+
+#: content/content-menu.php:37
+msgid "about me"
+msgstr "o mnie"
+
+#: content/content-menu.php:38
+msgid "texts"
+msgstr "teksty"
+
+#: content/content-menu.php:39
+msgid "e-books"
+msgstr "e-booki"
+
+#: content/content-menu.php:40
+msgid "blog"
+msgstr "blog"
+
+#: content/content-menu.php:41
+msgid "contact"
+msgstr "kontakt"
+
+#: content/content-menu.php:42
+msgid "film"
+msgstr "film"
+
+#: home.php:5
+msgid "I write"
+msgstr "Piszę"
+
+#: page-templates/writer-about.php:13
+msgid "scenarist / author"
+msgstr "scenarzystka / autorka"
+
+#: page-templates/writer-blog.php:11 single.php:11
+msgid "Blog"
+msgstr "Blog"
+
+#: page-templates/writer-blog.php:20
+msgid "full post"
+msgstr "cały wpis"
+
+#: page-templates/writer-blog.php:34 page-templates/writer-books.php:41
+#: page-templates/writer-texts.php:42 single-books.php:37
+#: single-writer_text.php:34 single.php:30
+msgid "Sorry, no posts matched your criteria."
+msgstr "Przepraszamy, nie znaleziono żadnych postów."
+
+#: page-templates/writer-books.php:11
+msgid "E-books"
+msgstr "E-booki"
+
+#: page-templates/writer-books.php:25
+msgid "download this e-book"
+msgstr "pobierz e-booka"
+
+#: page-templates/writer-books.php:38
+msgid "More e-books soon..."
+msgstr "Kolejne e-booki wkrótce..."
+
+#: page-templates/writer-contact.php:11
+msgid "Contact"
+msgstr "Kontakt"
+
+#: page-templates/writer-contact.php:12
+msgid ""
+"Jeżeli chcesz dowiedzieć się więcej o mojej pracy, a może współpracować.."
+msgstr ""
+
+#: page-templates/writer-texts.php:11
+msgid "Texts"
+msgstr "Teksty"
+
+#: page-templates/writer-texts.php:25
+msgid "I want to read"
+msgstr "chcę przeczytać"
+
+#: page-templates/writer-texts.php:38
+msgid "other texts"
+msgstr "inne teksty"
+
+#: single-books.php:29 single-writer_text.php:29 single.php:22
+msgid "/ All rights reserved."
+msgstr "/ Wszelkie prawa zastrzeżone."
+
+#: single-books.php:30 single-writer_text.php:30 single.php:23
+msgid "Do not copy or distribute without author's permission."
+msgstr ""
+"Kopiowanie, rozpowszechnianie części lub całości bez zgody autorki "
+"zabronione."
+
+#: single-books.php:32
+msgid "I want a pdf file"
+msgstr "chcę pobrać pdf"
+
+#: single-books.php:33
+msgid "I want an e-book"
+msgstr "chcę e-booka"
+
+#~ msgid "I want to download pdf file"
+#~ msgstr "chcę pobrać pdf"
+
+#~ msgid "download the e-book"
+#~ msgstr "pobierz e-booka"
+
+#~ msgid "o mnie"
+#~ msgstr "o mnie"

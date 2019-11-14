@@ -1,0 +1,1447 @@
+/*
+Theme Name: Portfolio Pisarskie
+Author: Tomasz Danel
+Version: 1.0
+Modified: Jerzy Drobot
+*/
+
+@font-face {
+    font-family: ApercuMono;
+    src: url(fonts/ApercuPro-Mono.otf);
+}
+
+@font-face {
+    font-family: ApercuRegular;
+    src: url(fonts/ApercuPro-Regular.otf);
+}
+
+@font-face {
+    font-family: ApercuLight;
+    src: url(fonts/ApercuPro-Light.otf);
+}
+
+@font-face {
+    font-family: MaisonNeueBook;
+    src: url(fonts/MaisonNeue-Book.ttf);
+}
+
+html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.name-header {
+    z-index: 2;
+    font-size: 26pt;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-weight: normal;
+    width: 100%;
+    text-align: center;
+    padding-top: 30pt;
+    margin-top: 0;
+}
+
+.name-header a {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.paper-box {
+    background: url("images/papier-animacja.gif") no-repeat center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.paper-box h1 {
+    position: relative;
+    top: 37%;
+    font-family: "Times New Roman";
+    font-size: 32pt;
+    font-weight: 200;
+}
+
+.menu-icon {
+	display: none;
+    z-index: 5;
+    cursor: pointer;
+    height: 16pt;
+    width: 20pt;
+    position: fixed;
+    left: 4%;
+    top: 50vh;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.menu-icon div {
+    position: absolute;
+    background: #000;
+    height: 2pt;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+@keyframes stretch {
+    0%, 100% {
+        width: 100%;
+    }
+    50% {
+        width: 66%;
+    }
+}
+
+.displayed div {
+    -webkit-transform: translate(-30vw, 0);
+    -moz-transform: translate(-30vw, 0);
+    -ms-transform: translate(-30vw, 0);
+    -o-transform: translate(-30vw, 0);
+    transform: translate(-30vw, 0);
+}
+
+.displayed:before, .displayed:after {
+    margin: 0 !important;
+}
+
+.displayed:before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.displayed:after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.animated-menu-icon div, .animated-menu-icon:after, .animated-menu-icon:before {
+    -webkit-animation: stretch 2s ease-in-out infinite;
+    -o-animation: stretch 2s ease-in-out infinite;
+    animation: stretch 2s ease-in-out infinite;
+}
+
+.animated-menu-icon:before, .animated-menu-icon:after {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    -o-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+.menu-icon:before, .menu-icon:after {
+    content: '';
+    background: #000;
+    height: 2pt;
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    margin: auto;
+    -webkit-transform-origin: right;
+    -moz-transform-origin: right;
+    -ms-transform-origin: right;
+    -o-transform-origin: right;
+    transform-origin: right;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+
+}
+
+
+.menu-icon:before {
+    top: 0px;
+    /*height: 2.2pt;*/
+}
+
+.menu-icon:after {
+    bottom: 0px;
+    /*height: 1.8pt;*/
+}
+
+.menu-header {
+    display: block;
+    width: 712px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.nav-link {
+    display: inline-block;
+    font-family: "Crimson Text";
+    font-size: 16pt;
+    text-decoration: none;
+    color: black;
+    padding-right: 10px;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+}
+.nav-link:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    transition-duration: 1s;
+}
+
+.menu-screen {
+    z-index: 2;
+    display: none;
+    font-family: ApercuLight;
+    color: white;
+    background-color: #000000;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    position: fixed;
+    top: 50vh;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.menu-screen h3 {
+    font-size: 9pt;
+    text-transform: uppercase;
+    margin: 20pt auto 25pt;
+}
+
+.menu-screen .menu-list {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-screen a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 14pt;
+    line-height: 22pt;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    -webkit-transform-origin: top;
+    -moz-transform-origin: top;
+    -ms-transform-origin: top;
+    -o-transform-origin: top;
+    transform-origin: top;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    -o-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+}
+
+.menu-screen .rolled-in {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+.menu-screen a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    float: left;
+}
+
+.social-links a {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.menu-screen .align-left, .menu-screen .align-right {
+    font-family: ApercuMono;
+    font-size: 9pt;
+    text-decoration: underline;
+    margin-top: 10%;
+}
+
+.menu-screen .align-left {
+    float: left;
+    margin-left: 70pt;
+}
+
+.menu-screen .align-right {
+    float: right;
+    margin-right: 70pt;
+}
+
+.language {
+    display: inline-block;
+    position: absolute;
+    padding-right: inherit;
+    right: 0;
+    top: 30%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.language span {
+    display: block;
+    font-family: MaisonNeueBook;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.language a {
+    text-decoration: none;
+    color: black;
+}
+
+.side-photo {
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 33%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.photo-author {
+    color: white;
+    font-family: ApercuMono;
+    font-size: 0.9vw;
+    position: absolute;
+    bottom: 16pt;
+    left: 32pt;
+}
+
+.about-box {
+    width: 58%;
+    height: 80px;
+    position: absolute;
+    padding-left: 3%;
+    box-sizing: border-box;
+    top: 25%;
+    left: 37%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.high-box {
+    height: 80%;
+    width: 70%;
+    left: 0;
+    padding-left: inherit;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.about-box .name {
+    display: block;
+    font-size: 26pt;
+    font-family: "Times New Roman";
+    font-style: italic;
+}
+
+.about-box .role {
+    display: block;
+    font-size: 14pt;
+    font-family: ApercuLight;
+}
+
+.content-text {
+    width: 90%;
+    padding-top: 20px;
+    padding-left: 4%;
+    font-size: 2vh;
+    font-family: "Times New Roman";
+    text-align: justify;
+}
+
+.about-text {
+    padding-left: 20%;
+    position: absolute;
+    width: 60%;
+    font-size: 2vh;
+    font-family: "Times New Roman";
+    top: 50%;
+    left: 0;
+	text-align: justify;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.about-text br {
+    display: block;
+    content: " ";
+    margin: 8pt;
+}
+
+.bio-info {
+    padding-top: 10px;
+    font-family: ApercuRegular;
+    font-size: 10pt;
+    text-align: center;
+}
+
+.more-button {
+    cursor: pointer;
+    position: absolute;
+    right: 25%;
+    top: 50%;
+    width: 16pt;
+    height: 16pt;
+    -webkit-transition: all 2s;
+    -moz-transition: all 2s;
+    -ms-transition: all 2s;
+    -o-transition: all 2s;
+    transition: all 2s;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.crossed {
+    -webkit-transform: translate(0, -50%) rotate(45deg);
+    -moz-transform: translate(0, -50%) rotate(45deg);
+    -ms-transform: translate(0, -50%) rotate(45deg);
+    -o-transform: translate(0, -50%) rotate(45deg);
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.more-button .cross-horizontal {
+    background-color: black;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+}
+
+.more-button .cross-vertical {
+    background-color: black;
+    width: 2px;
+    height: 100%;
+    margin: auto;
+}
+
+.page-template-writer-about .content-box {
+    width: 67%;
+    padding: 0 5% 0 8%;
+}
+
+.page-template-writer-ksiazka .content-box,
+.page-template-writer-film .content-box  {
+    width: 67%;
+    height: auto;
+    padding: 0 5% 0 8%;
+}
+
+.page-template-writer-ksiazka footer,
+.page-template-writer-film footer {
+    position: relative;
+    margin-top: 40px;
+}
+
+.page-template-writer-blog .content-box, 
+.page-template-writer-texts .content-box, 
+.page-template-writer-books .content-box, 
+.single .content-box {
+    height: auto;
+}
+
+.content-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    padding: 0 8%;
+}
+
+.contact-box {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.contact-box h3 {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 28pt;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
+
+.contact-box form {
+    width: 50%;
+    float: left;
+}
+
+.contact-text {
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 14pt;
+    padding-top: 40pt;
+    padding-left: 20pt;
+    box-sizing: border-box;
+    display: block;
+    float: right;
+    width: 50%;
+}
+
+.contact-box input, .contact-box textarea {
+    font-family: ApercuMono;
+    width: 90%;
+    margin: 5pt;
+    border: 1px solid black;
+    padding: 5pt;
+}
+
+.contact-box input::-webkit-input-placeholder, .contact-box textarea::-webkit-input-placeholder {
+    color: black;
+}
+
+.contact-box input:-moz-placeholder, .contact-box textarea:-moz-placeholder,
+.contact-box input::-moz-placeholder, .contact-box textarea::-moz-placeholder,
+.contact-box input:-ms-input-placeholder, .contact-box textarea:-ms-input-placeholder {
+    color: black;
+}
+
+.contact-box textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-box .contact-button {
+	cursor: pointer;
+    font-family: ApercuLight;
+    background-color: transparent;
+    width: 80px;
+    float: right;
+    margin-right: 13px;
+}
+
+.photo-info {
+    font-family: ApercuLight;
+    font-size: 10pt;
+    position: absolute;
+    bottom: 70pt;
+}
+
+.code-info {
+    font-family: ApercuLight;
+    font-size: 10pt;
+    position: absolute;
+    bottom: 55pt;
+}
+
+.code-info a {
+    color: black;
+}
+
+.blog-box {
+    width: 80%;
+    margin: 150px auto;
+}
+
+.blog-box h3 {
+    text-align: center;
+    font-family: "Times New Roman";
+    font-size: 28pt;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 50pt;
+}
+
+.post-box:after {
+    display: block;
+    content: ' ';
+    clear: both;
+}
+
+.blog-date {
+    font-family: ApercuMono;
+    font-size: 14pt;
+    margin: 80pt 0 15pt;
+}
+
+.post-box:nth-child(odd) .blog-date {
+    text-align: right;
+}
+
+.blog-thumbnail {
+    width: 60%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 25pt;
+}
+
+.blog-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-excerpt {
+    width: 50%;
+    float: left;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 16pt;
+    margin-bottom: 40pt;
+}
+
+.blog-excerpt p {
+    margin-top: 0;
+}
+
+.post-box:nth-child(odd) .blog-excerpt {
+    float: right;
+    text-align: right;
+}
+
+.blog-box button {
+    font-family: ApercuLight;
+    font-size: 12pt;
+    cursor: pointer;
+    float: right;
+    border: 1px solid black;
+    background-color: transparent;
+    padding: 7pt 32pt;
+    /*margin-top: 16pt;*/
+}
+
+.post-box:nth-child(odd) button {
+    float: left;
+}
+
+.scroll-pane {
+    margin-top: 20pt;
+    width: 100%;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.scroll-pane p {
+    padding-right: 20%;
+    font-family: "Times New Roman";
+    font-size: 16pt;
+    margin: 12pt 0;
+}
+
+.scroll-pane br {
+    display: block;
+    content: " ";
+    margin: 8pt;
+}
+
+.copyrights {
+    margin-top: 40px;
+    font-family: MaisonNeueBook;
+}
+
+.book-thumbnail img{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.book-description {
+    width: 50%;
+    float: right;
+    position: absolute;
+    bottom: 40%;
+    left: 50%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.book-button {
+    float: none !important;
+    margin: 30px 20px 0 0;
+}
+
+.pagination-single {
+    margin-top: 20px;
+}
+
+.pagination-single a {
+    margin: 15px;
+    font-family: ApercuLight;
+    font-size: 20pt;
+}
+
+.pagination {
+    text-align: center;
+}
+
+.pagination button {
+    float: none;
+    margin: auto;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 16pt;
+}
+
+.pagination p {
+    font-family: "Times New Roman";
+    font-size: 22pt;
+    font-style: italic;
+}
+
+.pagination img {
+    width: 32px;
+    display: block;
+    margin: 10px auto;
+}
+
+.page-numbers, .next, .pagination a {
+    color: black;
+    font-family: ApercuMono;
+    text-decoration: none;
+}
+
+.text-post {
+    position: relative;
+    margin-bottom: 5pt;
+}
+
+.text-title {
+    font-family: ApercuRegular;
+    font-size: 24pt;
+    margin-bottom: 15pt;
+}
+
+.text-type {
+    font-family: "Times New Roman";
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 2pt;
+    position: relative;
+    bottom: 3px;
+}
+
+.text-box {
+    width: 50%;
+    float: left;
+}
+
+.space-after {
+    margin-bottom: 80pt;
+}
+
+.text-description {
+    width: 50%;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.text-post:nth-child(odd) .text-box {
+    position: relative;
+    left: 50%;
+}
+
+.text-post:nth-child(odd) .text-description {
+    left: 0;
+    text-align: right;
+}
+
+.text-post:nth-child(odd) button {
+    float: right;
+}
+
+.text-thumbnail {
+    width: 30%;
+    padding: 50%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.text-thumbnail img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    object-fit: cover;
+}
+.contain img{
+    object-fit: contain;
+}
+
+.text-excerpt {
+    float: left;
+    font-family: "Times New Roman";
+    font-style: italic;
+    font-size: 16pt;
+}
+
+.text-excerpt p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.text-description button {
+    float: none;
+    font-size: 10pt;
+    padding: 8pt 14pt;
+    margin-top: 18pt;
+}
+
+.photo-copyright {
+    clear: both;
+    font-family: ApercuRegular;
+    font-size: 10pt;
+}
+
+footer {
+    padding: inherit;
+    position: absolute;
+    bottom: 16pt;
+    left: 0;
+    right: 0;
+    font-family: ApercuMono;
+    font-size: 0.9vw;
+}
+
+.facebook-box, .instagram-box{
+    float: left;
+    margin: 0 32pt 0 0;
+    color: black !important;
+}
+
+.copyright {
+    float: right;
+}
+
+.additional-texts {
+    width: 100%;
+    margin-top: 7vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.additional-text {
+    width: 30%;
+    display: inline-block;
+}
+
+.additional-description {
+    font-style: italic;
+    font-family: "Times New Roman";
+    font-size: 11pt;
+    margin-top: 4pt;
+}
+
+/*
+MEDIA QUERY -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*/
+
+@media only screen and (max-width: 1200px) and (min-width: 900px){
+	.about-box {
+		top: 20%;
+	}
+}
+
+
+@media only screen and (max-width: 900px) and (min-width: 768px){
+	
+	.menu-icon {
+		display: block;
+	}
+	
+	.menu-header {
+		display: none;
+	}
+	
+    footer {
+        font-size: 8pt;
+    }
+
+    .page-template-writer-about .facebook-box,
+    .page-template-writer-ksiazka .facebook-box,
+    .page-template-writer-film .facebook-box {
+        margin: 0;
+        display: none;
+    }
+
+    .page-template-writer-about .instagram-box,
+    .page-template-writer-ksiazka .instagram-box,
+    .page-template-writer-film .instagram-box {
+        float: left;
+        margin-left: 20px;
+        display: none;
+    }
+
+    .side-photo {
+        background-position: 72%;
+    }
+
+    .photo-author {
+        font-size: 1.7vw;
+        left: 8pt;
+    }
+
+    .more-button {
+        right: 8.5%;
+    }
+
+    .page-template-writer-about .language {
+        top: 20%;
+    }
+	
+	.about-box {
+		top: 21%;
+	}
+	
+	.about-box .name {
+		font-size: 24pt;
+	}
+	.about-box .role {
+		font-size: 12pt;
+	}
+
+    .about-text {
+        width: 75%;
+        font-size: 1.9vh;
+		padding-left: 21%;
+    }
+
+    .content-text {
+        width: 75%;
+        font-size: 1.9vh;
+		padding-left: 21%;
+    }
+
+    .contact-box {
+        width: 60%;
+    }
+
+    .contact-text {
+        float: none;
+        width: 100%;
+        margin: 0 0 5px;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+    .photo-info {
+        padding-left: 5px;
+        bottom: 9vh;
+    }
+
+    .code-info {
+        padding-left: 5px;
+        bottom: 7vh;
+    }
+
+    .contact-box form {
+        float: none;
+        width: 100%;
+    }
+
+    .contact-box form [type="submit"] {
+        margin-right: 25px;
+    }
+
+    .text-box {
+        position: relative;
+        left: 0 !important;
+        width: 100%;
+        float: none;
+    }
+
+    .text-description, .book-description {
+        position: relative;
+        text-align: left !important;
+        left: 0;
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .text-description .text-excerpt, .book-description .text-excerpt {
+        font-size: 12pt;
+    }
+
+    .text-thumbnail {
+        width: 50%;
+    }
+	
+}
+
+@media only screen and (max-width: 768px) and (min-width: 560px){
+	.menu-icon {
+		display: block;
+	}
+	
+	.menu-header {
+		display: none;
+	}
+	
+	 footer {
+        font-size: 8pt;
+    }
+
+    .page-template-writer-about .facebook-box,
+    .page-template-writer-ksiazka .facebook-box,
+    .page-template-writer-film .facebook-box {
+        margin: 0;
+        display: none;
+    }
+
+    .page-template-writer-about .instagram-box,
+    .page-template-writer-ksiazka .instagram-box,
+    .page-template-writer-film .instagram-box {
+        float: left;
+        margin-left: 20px;
+        display: none;
+    }
+	
+	 .side-photo {
+        background-position: 72%;
+    }
+
+    .photo-author {
+        font-size: 1.7vw;
+        left: 8pt;
+    }
+	
+	 .more-button {
+        right: 8.5%;
+    }
+	
+	.about-box {
+		top: 15%;
+	}
+	.about-box .name {
+		font-size: 24pt;
+	}
+	.about-box .role {
+		font-size: 12pt;
+	}
+	 .page-template-writer-about .language {
+        top: 14%;
+    }
+	
+	.about-text {
+		width: 75%;
+        font-size: 1.9vh;
+		padding-left: 21%;
+    }
+    
+	.content-text {
+		width: 75%;
+        font-size: 1.9vh;
+		padding-left: 21%;
+	}
+	.photo-info {
+        padding-left: 5px;
+        bottom: 9vh;
+    }
+
+    .code-info {
+        padding-left: 5px;
+        bottom: 7vh;
+    }
+
+    .contact-box form {
+        float: none;
+        width: 100%;
+    }
+
+    .contact-box form [type="submit"] {
+        margin-right: 25px;
+    }
+
+    .text-box {
+        position: relative;
+        left: 0 !important;
+        width: 100%;
+        float: none;
+    }
+
+    .text-description, .book-description {
+        position: relative;
+        text-align: left !important;
+        left: 0;
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .text-description .text-excerpt, .book-description .text-excerpt {
+        font-size: 12pt;
+    }
+
+    .text-thumbnail {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+	
+	.menu-icon {
+		display: block;
+	}
+	
+	.menu-header {
+		display: none;
+	}
+	
+    html, body {
+        width: 100vw;
+    }
+
+    body {
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .page-template-writer-about .name-header,
+    .page-template-writer-ksiazka .name-header,
+    .page-template-writer-film .name-header {
+        background-color: transparent;
+        position: absolute;
+        padding-top: 22px;
+    }
+
+    .page-template-writer-about .name-header a,
+    .page-template-writer-ksiazka .name-header a,
+    .page-template-writer-film .name-header a {
+        color: white;
+    }
+
+    .page-template-writer-about .menu-icon div, .page-template-writer-about .menu-icon:after, .page-template-writer-about .menu-icon:before,
+    .page-template-writer-ksiazka .menu-icon div, .page-template-writer-ksiazka .menu-icon:after, .page-template-writer-ksiazka .menu-icon:before,
+    .page-template-writer-film .menu-icon div, .page-template-writer-film .menu-icon:after, .page-template-writer-film .menu-icon:before {
+        background-color: white;
+    }
+    
+    .page-template-writer-about .menu-icon,
+    .page-template-writer-ksiazka .menu-icon,
+    .page-template-writer-film .menu-icon {
+        position: absolute;
+        top: 34px;
+    }
+
+    .name-header {
+        -webkit-transition: background-color 1s;
+        -moz-transition: background-color 1s;
+        -ms-transition: background-color 1s;
+        -o-transition: background-color 1s;
+        transition: background-color 1s;
+        position: fixed;
+        background-color: white;
+        padding-bottom: 20px;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding-top: 37px;
+        font-size: 5vw;
+    }
+
+    .header-separator {
+        /*border-bottom: 1px #9f9f9f solid;*/
+        background-color: #efefef;
+    }
+
+    footer {
+        bottom: 5px;
+        font-size: 2.5vw;
+    }
+
+    .facebook-box {
+        margin: 0;
+        display: none;
+    }
+
+    .instagram-box {
+        float: left;
+        margin-left: 20px;
+        display: none;
+    }
+
+    footer .copyright {
+        clear: both;
+        float: none;
+        margin: auto;
+        text-align: center;
+    }
+
+    .content-box {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        padding: 5px;
+    }
+
+    .paper-box {
+        width: 100%;
+    }
+
+    .language {
+        top: 50px;
+        display: none;
+    }
+
+    .language span {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+
+    .menu-icon {
+        position: fixed;
+        top: 49px;
+        left: 30px;
+        width: 16pt;
+        height: 14pt;
+    }
+
+    .menu-icon:after {
+        height: 2pt;
+    }
+
+    .animated-menu-icon div, .animated-menu-icon:before, .animated-menu-icon:after {
+        animation: none;
+    }
+
+    .side-photo {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        background-position: right 5% top;
+    }
+
+    .photo-author {
+        font-size: 3vw;
+    }
+
+    .more-button {
+        display: none;
+    }
+
+    .about-box {
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        padding-left: 10px;
+        padding-top: 3px;
+        top: 70vh;
+		left: 50%;
+        width: 100%;
+    }
+
+    .about-text, .content-text {
+		padding: inherit;
+        top: 0;
+        width: 95%;
+        box-sizing: border-box;
+        position: relative;
+        margin: 100vh 5px 15px;
+        display: block;
+        color: black;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+
+    .page-template-writer-about .content-box,
+    .page-template-writer-ksiazka .content-box,
+    .page-template-writer-film .content-box {
+        width: 100%;
+        padding: 5px;
+        height: auto;
+    }
+
+    .contact-box {
+        width: 100%;
+    }
+
+    .contact-text {
+        float: none;
+        width: 100%;
+        margin: 0 0 5px;
+        padding: 0 5px;
+        text-align: center;
+    }
+
+    .photo-info {
+        padding-left: 5px;
+        bottom: 9vh;
+    }
+
+    .code-info {
+        padding-left: 5px;
+        bottom: 6vh;
+    }
+
+    .contact-box form {
+        float: none;
+        width: 100%;
+    }
+
+    .contact-box h3 {
+        margin-top: 11vh;
+        margin-bottom: 3vh;
+    }
+
+    .blog-thumbnail {
+        width: 100%;
+        height: 30vh;
+    }
+
+    .blog-box {
+        margin-top: 15vh;
+        margin-bottom: 10vh;
+    }
+
+    .blog-date {
+        margin-top: 8vh;
+    }
+
+    .blog-excerpt {
+        float: none;
+        width: 100%;
+        margin-bottom: 0;
+        text-align: left !important;
+    }
+
+    .blog-thumbnail {
+        margin-bottom: 10px;
+    }
+
+    .blog-box button {
+        float: none;
+        width: 100%;
+    }
+
+    .scroll-pane {
+        margin-top: 20pt;
+        width: 100%;
+        height: auto;
+        overflow: auto;
+    }
+
+    .scroll-pane p {
+        width: 100%;
+        padding: 0;
+    }
+
+    .text-box {
+        position: relative;
+        left: 0 !important;
+        width: 100%;
+        float: none;
+    }
+
+    .text-description, .book-description {
+        position: relative;
+        text-align: left !important;
+        left: 0;
+        float: none;
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .text-description .text-excerpt, .book-description .text-excerpt {
+        font-size: 12pt;
+    }
+
+    .text-type {
+        margin-top: 4px;
+        display: block;
+    }
+
+    .additional-texts {
+        flex-wrap: wrap;
+    }
+
+    .additional-text {
+        width: 40%;
+        margin-bottom: 20pt;
+    }
+}
