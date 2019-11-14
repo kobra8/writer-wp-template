@@ -1,0 +1,1 @@
+# writer-wp-template
